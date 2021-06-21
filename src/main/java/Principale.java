@@ -31,6 +31,8 @@ public class Principale {
 		int age = rs.getInt("age");
 		System.out.println(id+ " "+nom +" "+age);
 		}
+		
+		System.out.println("Fin du traitement");
 	}
 
 }

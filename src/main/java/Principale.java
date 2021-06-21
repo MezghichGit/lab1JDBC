@@ -28,8 +28,13 @@ public class Principale {
 		
 		
 		// Code de mise à jour d'un candidat existant
-		 int result = stmt.executeUpdate("update candidat set nom='Alain' where id=5");
+		 ///int result = stmt.executeUpdate("update candidat set nom='Alain' where id=5");
 		//System.out.println(result); // 1
+		
+		
+		// Code de suppression d'un candidat existant
+		stmt.executeUpdate("delete from candidat where id=5");
+	    //System.out.println(result); // 1
 		
 		// fin code ajout
 		

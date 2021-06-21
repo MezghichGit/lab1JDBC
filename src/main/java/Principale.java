@@ -20,10 +20,17 @@ public class Principale {
 		// STEP 2: Création d'un objet statement pour écrire les commandes SQL
 		Statement stmt = con.createStatement();
 		
+		// Code d'ajout d'un nouveau candidat
+		int result = stmt.executeUpdate("insert into candidat(nom,age) values('Olivier', 26)");
+		//System.out.println(result); // 1
+		
+		// fin code ajout
+		
 		// STEP 3: Création objet ResultSET(table en mémoire) dont le rôle est de stocker le résultat d'une requete select
 		ResultSet rs = stmt.executeQuery("select id, nom, age from candidat");
 		
 		// STEP 4: On fait le parcours du ResultSet et on affiche son contenu
+		
 		while(rs.next()) {
 			
 		int id = rs.getInt("id");

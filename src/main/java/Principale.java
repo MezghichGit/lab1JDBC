@@ -7,6 +7,7 @@ import java.sql.SQLException;
 import java.sql.Statement;*/
 
 import java.sql.*;
+import java.util.Scanner;
 
 public class Principale {
 
@@ -21,7 +22,16 @@ public class Principale {
 		Statement stmt = con.createStatement();
 		
 		// Code d'ajout d'un nouveau candidat
-		/////int result = stmt.executeUpdate("insert into candidat(nom,age) values('Olivier', 26)");
+		Scanner lect = new Scanner(System.in);
+		
+		System.out.println("Donner notre nom");
+		String nom_value = lect.next();
+		
+		System.out.println("Donner notre age");
+		int age_value = lect.nextInt();
+		
+		
+		int result = stmt.executeUpdate("insert into candidat(nom,age) values('"+nom_value+"', "+age_value+")");
 		//System.out.println(result); // 1
 		
 		// fin code ajout
@@ -33,7 +43,7 @@ public class Principale {
 		
 		
 		// Code de suppression d'un candidat existant
-		stmt.executeUpdate("delete from candidat where id=5");
+		//stmt.executeUpdate("delete from candidat where id=5");
 	    //System.out.println(result); // 1
 		
 		// fin code ajout

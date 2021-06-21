@@ -23,21 +23,31 @@ public class Principale {
 		
 		// Code d'ajout d'un nouveau candidat
 		Scanner lect = new Scanner(System.in);
-		
+		/*
 		System.out.println("Donner notre nom");
 		String nom_value = lect.next();
 		
 		System.out.println("Donner notre age");
-		int age_value = lect.nextInt();
+		int age_value = lect.nextInt();*/
 		
 		
-		int result = stmt.executeUpdate("insert into candidat(nom,age) values('"+nom_value+"', "+age_value+")");
+		//int result = stmt.executeUpdate("insert into candidat(nom,age) values('"+nom_value+"', "+age_value+")");
 		//System.out.println(result); // 1
 		
 		// fin code ajout
 		
 		
 		// Code de mise à jour d'un candidat existant
+		
+
+		System.out.println("Quel est l'id du candidat dont vous souhaitez modifier le nom");
+		int idd = lect.nextInt();
+		
+		System.out.println("Quel est le nouveau nom");
+		String name = lect.next();
+		
+		int result = stmt.executeUpdate("update candidat set nom='"+name+"' where id="+idd+"");
+		
 		 ///int result = stmt.executeUpdate("update candidat set nom='Alain' where id=5");
 		//System.out.println(result); // 1
 		

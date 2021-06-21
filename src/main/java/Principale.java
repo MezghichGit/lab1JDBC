@@ -21,11 +21,19 @@ public class Principale {
 		Statement stmt = con.createStatement();
 		
 		// Code d'ajout d'un nouveau candidat
-		int result = stmt.executeUpdate("insert into candidat(nom,age) values('Olivier', 26)");
+		/////int result = stmt.executeUpdate("insert into candidat(nom,age) values('Olivier', 26)");
 		//System.out.println(result); // 1
 		
 		// fin code ajout
 		
+		
+		// Code de mise à jour d'un candidat existant
+		 int result = stmt.executeUpdate("update candidat set nom='Alain' where id=5");
+		//System.out.println(result); // 1
+		
+		// fin code ajout
+		
+	
 		// STEP 3: Création objet ResultSET(table en mémoire) dont le rôle est de stocker le résultat d'une requete select
 		ResultSet rs = stmt.executeQuery("select id, nom, age from candidat");
 		
